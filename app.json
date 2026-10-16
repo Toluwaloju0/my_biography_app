@@ -1,6 +1,6 @@
 {
-  "name": "bio-app",
-  "tagline": "TODO",
-  "description": "TODO",
+  "name": "Bio Archive",
+  "tagline": "A calm space to preserve the stories that make you who you are.",
+  "description": "Capture and keep personal memories in a private biography archive.",
   "category": "productivity"
 }

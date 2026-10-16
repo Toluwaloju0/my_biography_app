@@ -1,0 +1,6 @@
+.agents
+executas/bio-app/data/
+executas/bio-app/*.egg-info/
+__pycache__/
+.anna/
+.venv/

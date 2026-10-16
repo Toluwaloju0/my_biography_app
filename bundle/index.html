@@ -1,13 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>bio-app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f3ed" />
+    <title>Bio Archive</title>
+    <link rel="stylesheet" href="./styles.css" />
     <script src="./app.js" type="module"></script>
   </head>
   <body>
-    <h1>bio-app</h1>
-    <button id="primary-btn">Run</button>
-    <pre id="status">…</pre>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Bio Archive home">
+          <span class="brand-mark" aria-hidden="true">B</span>
+          <span>bio<span class="brand-light">archive</span></span>
+        </a>
+        <span class="privacy"><span class="privacy-dot"></span> A thoughtful place to remember</span>
+      </header>
+
+      <section class="intro" id="top">
+        <p class="eyebrow">A living record of you</p>
+        <h1>Every life has<br /><em>a story worth keeping.</em></h1>
+        <p class="intro-copy">Capture the moments, people, and memories that make your story yours. Write a little or a lot — you can always add more.</p>
+      </section>
+
+      <section class="composer card" aria-labelledby="compose-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Start with a memory</p>
+            <h2 id="compose-title">Add to your story</h2>
+          </div>
+          <span class="chapter-icon" aria-hidden="true">✳</span>
+        </div>
+
+        <label class="field-label" for="entry-title">A title for this memory <span>(optional)</span></label>
+        <input id="entry-title" class="title-input" type="text" list="title-options" maxlength="120" autocomplete="off" placeholder="The summer we moved to Lagos…" aria-describedby="title-hint" />
+        <datalist id="title-options"></datalist>
+        <small id="title-hint" class="input-hint">Choose an existing title or type a new one.</small>
+        <label class="field-label story-label" for="entry-text">Your story</label>
+        <textarea id="entry-text" rows="7" maxlength="20000" placeholder="Tell it in your own words. What happened? Who was there? What do you remember most?" required></textarea>
+        <div class="editor-footer">
+          <span id="word-count" class="word-count">0 words</span>
+          <span class="editor-hint">Take your time. This is your space.</span>
+        </div>
+
+        <div class="actions">
+          <button id="mic-btn" class="mic-button" type="button" aria-describedby="mic-hint" aria-pressed="false">
+            <span class="mic-icon" aria-hidden="true">🎙</span>
+          <span><strong>Record a memory</strong><small id="mic-hint">Tap to start, then tap again to transcribe</small></span>
+          </button>
+          <button id="save-btn" class="save-button" type="button">
+            <span>Save memory</span><span aria-hidden="true">↗</span>
+          </button>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite">Your memories are saved in the app backend. Speech is transcribed by Anna.</p>
+      </section>
+
+      <section class="memories" aria-labelledby="memories-title">
+        <div class="memories-heading">
+          <div><p class="eyebrow">Your collection</p><h2 id="memories-title">Saved memories <span id="memory-count" class="count-pill">0</span></h2></div>
+          <span class="collection-note">A life, one story at a time</span>
+        </div>
+        <div id="memory-list" class="memory-list" aria-live="polite">
+          <div class="empty-state"><span aria-hidden="true">✦</span><p>Your story begins here.</p><small>Saved memories will appear in this collection.</small></div>
+        </div>
+      </section>
+
+      <footer class="footer"><span>Made for remembering.</span><span>Bio Archive <span aria-hidden="true">·</span> 01</span></footer>
+    </main>
   </body>
 </html>
